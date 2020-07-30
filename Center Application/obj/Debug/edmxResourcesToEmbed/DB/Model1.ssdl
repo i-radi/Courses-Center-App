@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbCoursesCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="StudentsDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="StudentId" Type="int" />
+    <Property Name="CoursesId" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbCourses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="courseName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Instructor" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Categoryid" Type="int" />
+    <Property Name="Employeesid" Type="int" />
+    <Property Name="Usersid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbEmployees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Occuption" Type="nvarchar" MaxLength="50" />
+    <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbStudents">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_StudentsDetails_tbCourses">
+    <End Role="tbCourses" Type="Self.tbCourses" Multiplicity="0..1" />
+    <End Role="StudentsDetails" Type="Self.StudentsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCourses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentsDetails">
+        <PropertyRef Name="CoursesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsDetails_tbStudents">
+    <End Role="tbStudents" Type="Self.tbStudents" Multiplicity="0..1" />
+    <End Role="StudentsDetails" Type="Self.StudentsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbStudents">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentsDetails">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCourses_tbCategory">
+    <End Role="tbCategory" Type="Self.tbCategory" Multiplicity="0..1" />
+    <End Role="tbCourses" Type="Self.tbCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbCourses">
+        <PropertyRef Name="Categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCourses_tbEmployees">
+    <End Role="tbEmployees" Type="Self.tbEmployees" Multiplicity="0..1" />
+    <End Role="tbCourses" Type="Self.tbCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEmployees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbCourses">
+        <PropertyRef Name="Employeesid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCourses_tbUsers1">
+    <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="0..1" />
+    <End Role="tbCourses" Type="Self.tbCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbCourses">
+        <PropertyRef Name="Usersid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbCoursesCenterModelStoreContainer">
+    <EntitySet Name="StudentsDetails" EntityType="Self.StudentsDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCategory" EntityType="Self.tbCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCourses" EntityType="Self.tbCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbEmployees" EntityType="Self.tbEmployees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbStudents" EntityType="Self.tbStudents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUsers" EntityType="Self.tbUsers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_StudentsDetails_tbCourses" Association="Self.FK_StudentsDetails_tbCourses">
+      <End Role="tbCourses" EntitySet="tbCourses" />
+      <End Role="StudentsDetails" EntitySet="StudentsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsDetails_tbStudents" Association="Self.FK_StudentsDetails_tbStudents">
+      <End Role="tbStudents" EntitySet="tbStudents" />
+      <End Role="StudentsDetails" EntitySet="StudentsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCourses_tbCategory" Association="Self.FK_tbCourses_tbCategory">
+      <End Role="tbCategory" EntitySet="tbCategory" />
+      <End Role="tbCourses" EntitySet="tbCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCourses_tbEmployees" Association="Self.FK_tbCourses_tbEmployees">
+      <End Role="tbEmployees" EntitySet="tbEmployees" />
+      <End Role="tbCourses" EntitySet="tbCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCourses_tbUsers1" Association="Self.FK_tbCourses_tbUsers1">
+      <End Role="tbUsers" EntitySet="tbUsers" />
+      <End Role="tbCourses" EntitySet="tbCourses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

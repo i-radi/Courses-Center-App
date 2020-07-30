@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <PublishUrlHistory>\\DESKTOP-RDUVFVK\Users\iradi\OneDrive\Desktop\Courses Center App\|C:\Users\iradi\OneDrive\Desktop\Courses Center App\|publish\|C:\Users\iradi\OneDrive\Desktop\</PublishUrlHistory>
+    <InstallUrlHistory>\\DESKTOP-RDUVFVK\Users\iradi\OneDrive\Desktop\Courses Center App\</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>\\DESKTOP-RDUVFVK\Users\iradi\OneDrive\Desktop\Courses Center App\</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>

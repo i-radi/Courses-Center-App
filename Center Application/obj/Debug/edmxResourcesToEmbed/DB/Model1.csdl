@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbCoursesCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tbCourses" Relationship="dbCoursesCenterModel.FK_tbCourses_tbCategory" FromRole="tbCategory" ToRole="tbCours" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbCours">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Instructor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Categoryid" Type="Int32" />
+    <NavigationProperty Name="tbCategory" Relationship="dbCoursesCenterModel.FK_tbCourses_tbCategory" FromRole="tbCours" ToRole="tbCategory" />
+    <Property Name="Employeesid" Type="Int32" />
+    <Property Name="Usersid" Type="Int32" />
+    <NavigationProperty Name="StudentsDetails" Relationship="dbCoursesCenterModel.FK_StudentsDetails_tbCourses" FromRole="tbCours" ToRole="StudentsDetail" />
+    <NavigationProperty Name="tbEmployee" Relationship="dbCoursesCenterModel.FK_tbCourses_tbEmployees" FromRole="tbCours" ToRole="tbEmployee" />
+    <NavigationProperty Name="tbUser" Relationship="dbCoursesCenterModel.FK_tbCourses_tbUsers1" FromRole="tbCours" ToRole="tbUser" />
+    <Property Name="courseName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbEmployee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Occuption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbCourses" Relationship="dbCoursesCenterModel.FK_tbCourses_tbEmployees" FromRole="tbEmployee" ToRole="tbCours" />
+    <Property Name="employeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbStudent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StudentsDetails" Relationship="dbCoursesCenterModel.FK_StudentsDetails_tbStudents" FromRole="tbStudent" ToRole="StudentsDetail" />
+    <Property Name="studentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbCourses" Relationship="dbCoursesCenterModel.FK_tbCourses_tbUsers1" FromRole="tbUser" ToRole="tbCours" />
+  </EntityType>
+  <EntityContainer Name="dbCoursesCenterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbCategories" EntityType="Self.tbCategory" />
+    <EntitySet Name="tbCourses" EntityType="Self.tbCours" />
+    <EntitySet Name="tbEmployees" EntityType="Self.tbEmployee" />
+    <EntitySet Name="tbStudents" EntityType="Self.tbStudent" />
+    <EntitySet Name="tbUsers" EntityType="Self.tbUser" />
+    <EntitySet Name="sysdiagrams" EntityType="dbCoursesCenterModel.sysdiagram" />
+    <AssociationSet Name="FK_tbCourses_tbCategory" Association="dbCoursesCenterModel.FK_tbCourses_tbCategory">
+      <End Role="tbCategory" EntitySet="tbCategories" />
+      <End Role="tbCours" EntitySet="tbCourses" />
+    </AssociationSet>
+    <EntitySet Name="StudentsDetails" EntityType="dbCoursesCenterModel.StudentsDetail" />
+    <AssociationSet Name="FK_StudentsDetails_tbCourses" Association="dbCoursesCenterModel.FK_StudentsDetails_tbCourses">
+      <End Role="tbCours" EntitySet="tbCourses" />
+      <End Role="StudentsDetail" EntitySet="StudentsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsDetails_tbStudents" Association="dbCoursesCenterModel.FK_StudentsDetails_tbStudents">
+      <End Role="tbStudent" EntitySet="tbStudents" />
+      <End Role="StudentsDetail" EntitySet="StudentsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCourses_tbEmployees" Association="dbCoursesCenterModel.FK_tbCourses_tbEmployees">
+      <End Role="tbEmployee" EntitySet="tbEmployees" />
+      <End Role="tbCours" EntitySet="tbCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCourses_tbUsers1" Association="dbCoursesCenterModel.FK_tbCourses_tbUsers1">
+      <End Role="tbUser" EntitySet="tbUsers" />
+      <End Role="tbCours" EntitySet="tbCourses" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_tbCourses_tbCategory">
+    <End Type="dbCoursesCenterModel.tbCategory" Role="tbCategory" Multiplicity="0..1" />
+    <End Type="dbCoursesCenterModel.tbCours" Role="tbCours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbCours">
+        <PropertyRef Name="Categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="StudentsDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="CoursesId" Type="Int32" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tbCours" Relationship="dbCoursesCenterModel.FK_StudentsDetails_tbCourses" FromRole="StudentsDetail" ToRole="tbCours" />
+    <NavigationProperty Name="tbStudent" Relationship="dbCoursesCenterModel.FK_StudentsDetails_tbStudents" FromRole="StudentsDetail" ToRole="tbStudent" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_StudentsDetails_tbCourses">
+    <End Type="dbCoursesCenterModel.tbCours" Role="tbCours" Multiplicity="0..1" />
+    <End Type="dbCoursesCenterModel.StudentsDetail" Role="StudentsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCours">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentsDetail">
+        <PropertyRef Name="CoursesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsDetails_tbStudents">
+    <End Type="dbCoursesCenterModel.tbStudent" Role="tbStudent" Multiplicity="0..1" />
+    <End Type="dbCoursesCenterModel.StudentsDetail" Role="StudentsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbStudent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentsDetail">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCourses_tbEmployees">
+    <End Type="dbCoursesCenterModel.tbEmployee" Role="tbEmployee" Multiplicity="0..1" />
+    <End Type="dbCoursesCenterModel.tbCours" Role="tbCours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEmployee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbCours">
+        <PropertyRef Name="Employeesid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCourses_tbUsers1">
+    <End Type="dbCoursesCenterModel.tbUser" Role="tbUser" Multiplicity="0..1" />
+    <End Type="dbCoursesCenterModel.tbCours" Role="tbCours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbCours">
+        <PropertyRef Name="Usersid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

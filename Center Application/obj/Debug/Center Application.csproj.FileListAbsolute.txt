@@ -1,0 +1,42 @@
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\App.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Center_Application.Properties.Resources.resources
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Center Application.csproj.GenerateResource.cache
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Center Application.csproj.CoreCompileInputs.cache
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Courses.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Employees.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Login.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Main Screen.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Register.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Reports.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Student Details.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Students.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Courses.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Employees.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Login.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Main Screen.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Register.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Reports.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Student Details.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Students.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\EntityFramework.dll
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\EntityFramework.xml
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Center Application.csproj.CopyComplete
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Categorys.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Screens\Categorys.baml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\Center Application.csprojAssemblyReference.cache
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp_Content.g.cs
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp_MarkupCompile.cache
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp_MarkupCompile.lref
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp.g.resources
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp.TrustInfo.xml
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp.exe
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp.pdb
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\CoursesCenterApp.exe.config
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\CoursesCenterApp.exe.manifest
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\CoursesCenterApp.application
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\CoursesCenterApp.exe
+C:\Users\iradi\source\repos\Center Application\Center Application\bin\Debug\CoursesCenterApp.pdb
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp.exe.manifest
+C:\Users\iradi\source\repos\Center Application\Center Application\obj\Debug\CoursesCenterApp.application
